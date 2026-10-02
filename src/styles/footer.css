@@ -1,0 +1,106 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  color: var(--text);
+  border-top: 2px solid transparent;
+  background:
+    linear-gradient(var(--surface-strong), var(--surface-strong)) padding-box,
+    var(--camo-border) border-box;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.24;
+  background:
+    radial-gradient(ellipse at 14% 30%, rgba(168, 191, 57, 0.36) 0 11%, transparent 12%),
+    radial-gradient(ellipse at 72% 68%, rgba(213, 173, 77, 0.25) 0 12%, transparent 13%),
+    radial-gradient(ellipse at 91% 24%, rgba(239, 43, 45, 0.14) 0 8%, transparent 9%);
+}
+
+.footer__top,
+.footer__bottom {
+  position: relative;
+  z-index: 1;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.footer__logo {
+  width: min(320px, 100%);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.5));
+}
+
+.footer__brand p {
+  max-width: 380px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.footer__columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.footer__columns > div {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.footer__title {
+  margin-bottom: 6px;
+  color: var(--red);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.footer__columns a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  color: var(--text);
+  opacity: 0.74;
+  font-size: 12px;
+  transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer__columns a:hover {
+  transform: translateX(3px);
+  color: var(--red);
+  opacity: 1;
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  border-top: 1px solid var(--red-soft);
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
