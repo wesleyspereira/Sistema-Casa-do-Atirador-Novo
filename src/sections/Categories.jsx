@@ -1,24 +1,27 @@
 import CategoryCard from "../components/CategoryCard";
+import pistolasImage from "../assets/pistolas.jpg";
+import fullSizeImage from "../assets/full-size.jpg";
+import esportivasImage from "../assets/esportivas.jpg";
 import "../styles/sections.css";
 
 const categories = [
   {
     number: "01",
-    title: "Linha principal",
-    subtitle: "Explore",
-    image: "/images/category-01.jpg",
+    title: "Pistolas",
+    subtitle: "Linha principal",
+    image: pistolasImage,
   },
   {
     number: "02",
-    title: "Acessórios",
+    title: "Full Size",
     subtitle: "Performance",
-    image: "/images/category-02.jpg",
+    image: fullSizeImage,
   },
   {
     number: "03",
-    title: "Equipamentos",
+    title: "Esportivas",
     subtitle: "Precisão",
-    image: "/images/category-03.jpg",
+    image: esportivasImage,
   },
 ];
 
@@ -33,8 +36,8 @@ function Categories() {
           </div>
 
           <p>
-            Uma navegação simples, visual e sofisticada para destacar as
-            principais áreas da loja.
+            Uma vitrine visual com categorias principais da Casa do Atirador,
+            mantendo a identidade camuflada em toda a experiência.
           </p>
         </div>
 

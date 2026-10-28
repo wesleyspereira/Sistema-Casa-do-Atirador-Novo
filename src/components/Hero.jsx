@@ -1,23 +1,31 @@
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import heroGun from "../assets/glock-balas-g25.webp";
 import "../styles/hero.css";
 
 function Hero() {
+  const heroVideo = `${import.meta.env.BASE_URL}videos/hero.mp4`;
+
   return (
     <section className="hero" id="inicio">
 
-      {/* Fundo */}
-      <div className="hero__background"></div>
+      {/* VIDEO DE FUNDO */}
+      <video
+        className="hero__video"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
 
-      {/* Camuflado */}
+      {/* CAMUFLADO */}
       <div className="hero__camo"></div>
 
-      {/* Escurecimento */}
+      {/* ESCURECIMENTO */}
       <div className="hero__overlay"></div>
 
       <div className="hero__content container">
 
-        {/* LADO ESQUERDO */}
         <div className="hero__text">
           <span className="eyebrow">
             Experiência • tradição • precisão
@@ -49,28 +57,6 @@ function Hero() {
               Conheça a empresa
             </a>
           </div>
-        </div>
-
-        {/* LADO DIREITO */}
-        <div className="hero__product">
-
-          <div className="hero__product-glow"></div>
-
-          <div className="hero__product-frame">
-            <img
-              src={heroGun}
-              alt="Produto em destaque Casa do Atirador"
-              className="hero__product-image"
-            />
-
-            <div className="hero__product-overlay"></div>
-
-            <div className="hero__product-info">
-              <span>Destaque</span>
-              <strong>Casa do Atirador</strong>
-            </div>
-          </div>
-
         </div>
 
       </div>

@@ -1,9 +1,11 @@
+import heroBackground from "../assets/fundo.png";
+
 function Experience() {
   return (
     <section className="experience">
       <img
-        src="/images/experience.jpg"
-        alt=""
+        src={heroBackground}
+        alt="Textura camuflada Casa do Atirador"
         className="experience__background"
       />
 
@@ -14,12 +16,12 @@ function Experience() {
 
         <h2>
           Mais que uma loja.
-          <span>Uma marca com presença.</span>
+          <span>Uma presença com identidade própria.</span>
         </h2>
 
         <p>
-          Esta seção foi criada para receber uma imagem forte, vídeo ou
-          composição cinematográfica da própria Casa do Atirador.
+          Fundo camuflado, visual premium e uma vitrine preparada para valorizar
+          produtos, serviços e atendimento especializado.
         </p>
       </div>
     </section>

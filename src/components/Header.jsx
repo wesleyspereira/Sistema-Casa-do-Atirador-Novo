@@ -46,9 +46,6 @@ function Header() {
         <a href="#categorias" onClick={() => setMenuOpen(false)}>
           Categorias
         </a>
-        <a href="#destaques" onClick={() => setMenuOpen(false)}>
-          Destaques
-        </a>
         <a href="#servicos" onClick={() => setMenuOpen(false)}>
           Serviços
         </a>

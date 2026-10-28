@@ -10,11 +10,9 @@
   align-items: center;
   padding: 0 48px;
   border-bottom: 1px solid var(--red-soft);
-  background-color: var(--header-bg);
-  background-image:
-    radial-gradient(ellipse at 14% 34%, rgba(168, 191, 57, 0.16) 0 12%, transparent 13%),
-    radial-gradient(ellipse at 72% 60%, rgba(213, 173, 77, 0.12) 0 11%, transparent 12%),
-    radial-gradient(ellipse at 91% 22%, rgba(239, 43, 45, 0.09) 0 8%, transparent 9%);
+  background:
+    linear-gradient(rgba(4, 6, 4, 0.82), rgba(4, 6, 4, 0.82)),
+    url("../assets/fundo.png") center / cover no-repeat;
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   transition: background-color 0.3s ease, border-color 0.3s ease;

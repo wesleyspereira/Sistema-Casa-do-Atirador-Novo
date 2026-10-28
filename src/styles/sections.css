@@ -1,12 +1,10 @@
-.categories-grid,
-.products-grid {
+.categories-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
-.category-card,
-.product-card__media {
+.category-card {
   border: 2px solid transparent;
   background:
     linear-gradient(var(--surface-strong), var(--surface-strong)) padding-box,
@@ -29,7 +27,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(20%) brightness(0.72) saturate(0.95);
+  filter: grayscale(18%) brightness(0.7) saturate(0.96);
   transition: transform 0.7s ease, filter 0.4s ease;
 }
 
@@ -67,8 +65,7 @@
   z-index: 2;
 }
 
-.category-card__content span,
-.product-card__info span {
+.category-card__content span {
   color: var(--khaki);
   font-size: 10px;
   letter-spacing: 3px;
@@ -84,71 +81,6 @@
   text-transform: uppercase;
 }
 
-.product-card__media {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-}
-
-.product-card__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.84) saturate(0.95);
-  transition: transform 0.6s ease, filter 0.4s ease;
-}
-
-.product-card:hover img {
-  transform: scale(1.04);
-  filter: brightness(0.96) saturate(1.08);
-}
-
-.product-card__tag {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  padding: 8px 11px;
-  color: #fff;
-  background: rgba(6, 8, 5, 0.78);
-  border: 1px solid var(--red);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-.product-card__open {
-  position: absolute;
-  right: 18px;
-  bottom: 18px;
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--red);
-  color: #fff;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.product-card__open:hover {
-  transform: rotate(45deg);
-  background: #ff4648;
-}
-
-.product-card__info {
-  padding: 20px 0 8px;
-}
-
-.product-card__info h3 {
-  margin-top: 8px;
-  color: var(--text);
-  font-family: "Oswald", sans-serif;
-  font-size: 28px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
 
 .experience {
   position: relative;
@@ -159,7 +91,9 @@
   padding: 100px 0;
   border-top: 2px solid var(--red);
   border-bottom: 2px solid var(--red);
-  background: var(--bg);
+  background:
+    linear-gradient(rgba(5, 7, 4, 0.5), rgba(5, 7, 4, 0.5)),
+    url("../assets/fundo.png") center / cover no-repeat;
 }
 
 .experience::before {
@@ -168,9 +102,9 @@
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(ellipse at 12% 18%, rgba(168, 191, 57, 0.25) 0 9%, transparent 10%),
-    radial-gradient(ellipse at 78% 72%, rgba(225, 122, 40, 0.16) 0 11%, transparent 12%),
-    radial-gradient(ellipse at 54% 24%, rgba(239, 43, 45, 0.11) 0 8%, transparent 9%);
+    radial-gradient(ellipse at 12% 18%, rgba(168, 191, 57, 0.18) 0 9%, transparent 10%),
+    radial-gradient(ellipse at 78% 72%, rgba(225, 122, 40, 0.12) 0 11%, transparent 12%),
+    radial-gradient(ellipse at 54% 24%, rgba(239, 43, 45, 0.08) 0 8%, transparent 9%);
   pointer-events: none;
 }
 
@@ -184,12 +118,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.58) saturate(0.85);
+  filter: brightness(0.54) saturate(0.74);
 }
 
 .experience__overlay {
   z-index: 1;
-  background: linear-gradient(to top, rgba(4, 6, 4, 0.94), rgba(5, 8, 4, 0.28) 72%);
+  background: linear-gradient(to top, rgba(4, 6, 4, 0.94), rgba(5, 8, 4, 0.3) 72%);
 }
 
 .experience__content {
@@ -285,33 +219,71 @@
 .about {
   position: relative;
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  min-height: 760px;
+  grid-template-columns: 0.82fr 1.18fr;
+  align-items: center;
+  min-height: 680px;
   overflow: hidden;
   color: var(--text);
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
   background:
-    linear-gradient(var(--surface-strong), var(--surface-strong)) padding-box,
-    var(--camo-border) border-box;
+    linear-gradient(rgba(5, 7, 4, 0.82), rgba(5, 7, 4, 0.82)),
+    url("../assets/fundo.png") center / cover no-repeat;
 }
 
 .about__media {
+  position: relative;
+  width: min(88%, 620px);
+  aspect-ratio: 4 / 3;
+  justify-self: center;
   overflow: hidden;
+  border: 3px solid transparent;
+  background:
+    linear-gradient(#080a07, #080a07) padding-box,
+    var(--camo-border) border-box;
+  box-shadow:
+    0 32px 80px var(--shadow),
+    0 0 0 1px var(--red-soft);
 }
 
 .about__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.66) saturate(0.9);
+  object-position: center;
+  filter: brightness(0.76) contrast(1.08) saturate(0.95);
+  transition: transform 0.8s ease, filter 0.5s ease;
+}
+
+.about__media:hover img {
+  transform: scale(1.035);
+  filter: brightness(0.88) contrast(1.08) saturate(1.05);
+}
+
+.about__media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78), transparent 50%);
+  pointer-events: none;
+}
+
+.about__media-label {
+  position: absolute;
+  left: 26px;
+  bottom: 22px;
+  z-index: 2;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-size: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .about__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 80px clamp(40px, 7vw, 110px);
+  padding: 80px clamp(40px, 7vw, 110px) 80px clamp(24px, 5vw, 80px);
 }
 
 .about__content p {
