@@ -176,7 +176,7 @@
   font-size: 16px;
 }
 
-.service-card > div {
+.service-card>div {
   display: grid;
   grid-template-columns: 0.8fr 1fr auto;
   gap: 50px;

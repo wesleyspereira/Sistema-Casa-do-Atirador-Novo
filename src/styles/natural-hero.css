@@ -1,0 +1,308 @@
+/* 2026-10: acabamento final do topo, mantendo o vídeo ORIGINAL e sem recortes. */
+.header {
+  padding-inline: clamp(16px, 3.1vw, 48px);
+}
+
+.header__inner {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto minmax(185px, 1fr);
+  column-gap: 18px;
+  min-width: 0;
+}
+
+.header__brand {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-shrink: 0;
+  width: fit-content;
+  min-width: 166px;
+  height: 100%;
+  align-items: center;
+  justify-self: start;
+}
+
+.header__logo {
+  display: block;
+  width: clamp(170px, 17vw, 224px);
+  max-width: 100%;
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+.header__nav {
+  white-space: nowrap;
+}
+
+.header__actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__menu-button {
+  flex-shrink: 0;
+}
+
+.header__cart-notice {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: clamp(16px, 3vw, 48px);
+  width: min(340px, calc(100vw - 32px));
+  padding: 18px;
+  color: #f5f5f1;
+  background: #10130f;
+  border: 1px solid rgba(255, 255, 255, .25);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, .48);
+}
+
+.header__cart-notice strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.header__cart-notice p {
+  color: #c7cbc1;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.header__cart-notice button {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #fff;
+  background: #b71d29;
+  padding: 9px 14px;
+}
+
+/* O arquivo hero.mp4 possui fundo preto. "screen" mistura esse preto com o
+   camuflado e revela o objeto sem criar um retângulo ao redor do vídeo. */
+.hero {
+  background:
+    linear-gradient(90deg, rgba(4, 6, 4, .87) 0%, rgba(4, 6, 4, .73) 42%, rgba(4, 6, 4, .52) 100%),
+    url('../assets/fundo.png') center / cover no-repeat;
+}
+
+.hero__layout {
+  overflow: visible;
+}
+
+.hero__visual {
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+  height: 100%;
+  max-height: none;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  box-shadow: none;
+}
+
+.hero__video,
+:root[data-theme="light"] .hero__video {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  mix-blend-mode: screen;
+  /* Máscara no vídeo (não no contêiner) para a textura aparecer através do preto. */
+  -webkit-mask-image: radial-gradient(ellipse 82% 88% at 52% 51%, #000 48%, rgba(0, 0, 0, .95) 66%, transparent 100%);
+  mask-image: radial-gradient(ellipse 82% 88% at 52% 51%, #000 48%, rgba(0, 0, 0, .95) 66%, transparent 100%);
+  filter: brightness(1.18) contrast(1.12);
+  opacity: 1;
+}
+
+.hero__visual-label {
+  display: none;
+}
+
+/* O topo permanece escuro também no tema claro, para que o vídeo se integre. */
+:root[data-theme="light"] .hero {
+  background:
+    linear-gradient(90deg, rgba(4, 6, 4, .87) 0%, rgba(4, 6, 4, .73) 42%, rgba(4, 6, 4, .52) 100%),
+    url('../assets/fundo.png') center / cover no-repeat;
+}
+
+/* Acesso rápido e visível ao WhatsApp em todas as páginas. */
+.whatsapp-float {
+  position: fixed;
+  z-index: 200;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  color: #fff;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .23);
+  background: #12c866;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .45), 0 0 0 6px rgba(18, 200, 102, .1);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .52);
+}
+
+.whatsapp-float svg {
+  display: block;
+}
+
+.whatsapp-float:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 4px;
+}
+
+/* Cabeçalho ocupando toda a largura */
+.header__inner {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+/* Ícones alinhados à direita */
+.header__actions {
+  justify-self: end;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1160px) {
+  .header__inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .header__brand {
+    grid-column: 1;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 24px;
+    right: 24px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    white-space: normal;
+    gap: 0;
+    padding: 12px 18px;
+    background: #11150e;
+    border: 1px solid #bc2430;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, .5);
+  }
+
+  .header__nav--open {
+    display: flex;
+  }
+
+  .header__nav a {
+    padding: 15px 8px;
+  }
+
+  .header__actions {
+    grid-column: 2;
+  }
+
+  .header__menu-button {
+    display: grid;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero__visual {
+    min-height: 300px;
+    height: 315px;
+  }
+}
+
+@media (max-width: 680px) {
+  .header__inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 5px;
+  }
+
+  .header__brand {
+    min-width: 0;
+  }
+
+  .header__logo {
+    width: clamp(104px, 30vw, 148px);
+  }
+
+  .header__actions {
+    gap: 4px;
+  }
+
+  .header .icon-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .header .icon-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .header__nav {
+    left: 16px;
+    right: 16px;
+  }
+
+  .hero__visual {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
+  .hero__video {
+    object-fit: contain;
+    -webkit-mask-image: radial-gradient(ellipse 83% 85% at 51% 50%, #000 52%, transparent 100%);
+    mask-image: radial-gradient(ellipse 83% 85% at 51% 50%, #000 52%, transparent 100%);
+  }
+
+  .whatsapp-float {
+    right: 16px;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-width: 390px) {
+  .header .icon-button--future {
+    display: grid;
+  }
+
+  .header__logo {
+    width: 105px;
+  }
+
+  .header__actions {
+    gap: 2px;
+  }
+
+  .header .icon-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .header .icon-button svg {
+    width: 15px;
+    height: 15px;
+  }
+}

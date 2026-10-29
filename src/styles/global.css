@@ -20,17 +20,15 @@
   --header-bg: rgba(5, 7, 5, 0.82);
   --section-overlay: rgba(5, 7, 4, 0.88);
   --camo-opacity: 0.62;
-  --camo-border: linear-gradient(
-    125deg,
-    #ef2b2d 0 10%,
-    #9fbd32 10% 24%,
-    #d5ad4d 24% 37%,
-    #d85f23 37% 50%,
-    #4d6326 50% 65%,
-    #ef2b2d 65% 78%,
-    #b9d541 78% 90%,
-    #714c24 90% 100%
-  );
+  --camo-border: linear-gradient(125deg,
+      #ef2b2d 0 10%,
+      #9fbd32 10% 24%,
+      #d5ad4d 24% 37%,
+      #d85f23 37% 50%,
+      #4d6326 50% 65%,
+      #ef2b2d 65% 78%,
+      #b9d541 78% 90%,
+      #714c24 90% 100%);
 
   font-family: "Inter", sans-serif;
   color: var(--text);
@@ -219,8 +217,8 @@ video {
   text-transform: uppercase;
 }
 
-.section-heading > p,
-.section-heading--dark > p {
+.section-heading>p,
+.section-heading--dark>p {
   max-width: 500px;
   justify-self: end;
   color: var(--muted);

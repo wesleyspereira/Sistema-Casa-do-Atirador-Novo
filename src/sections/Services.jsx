@@ -1,47 +1,19 @@
 import ServiceCard from "../components/ServiceCard";
-
 const services = [
-  {
-    number: "01",
-    title: "Atendimento especializado",
-    text: "Espaço para explicar o suporte prestado pela equipe antes, durante e depois do atendimento.",
-  },
-  {
-    number: "02",
-    title: "Análise documental",
-    text: "Uma futura área exclusiva poderá organizar o envio e acompanhamento de documentos.",
-  },
-  {
-    number: "03",
-    title: "Cliente já autorizado",
-    text: "Fluxo dedicado para clientes que já possuem a documentação necessária e desejam atendimento.",
-  },
+  { number: "01", title: "Assessoria documental", text: "Orientação sobre os procedimentos legais, documentações e requisitos aplicáveis." },
+  { number: "02", title: "CR e processos de transferência", text: "Informações sobre concessão de CR (CAC) e processos de transferência, conforme as regras vigentes." },
+  { number: "03", title: "Treinamentos e atendimento", text: "Atendimento especializado e informações sobre os treinamentos oferecidos pela empresa." },
 ];
-
-function Services() {
+export default function Services() {
   return (
     <section className="section section--cream" id="servicos">
       <div className="container">
         <div className="section-heading">
-          <div>
-            <span className="eyebrow eyebrow--dark">Serviços</span>
-            <h2>Atendimento em cada etapa</h2>
-          </div>
-
-          <p>
-            Área preparada para receber os serviços reais da empresa depois da
-            aprovação do visual.
-          </p>
+          <div><span className="eyebrow eyebrow--dark">Suporte completo</span><h2>Nossos <em>serviços</em></h2></div>
+          <p>Mais que uma loja: atendimento especializado e orientação para clientes e praticantes de tiro esportivo.</p>
         </div>
-
-        <div className="services-list">
-          {services.map((service) => (
-            <ServiceCard key={service.number} {...service} />
-          ))}
-        </div>
+        <div className="services-list">{services.map((s) => <ServiceCard key={s.number} {...s}/>)}</div>
       </div>
     </section>
   );
 }
-
-export default Services;

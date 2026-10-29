@@ -90,7 +90,7 @@
   -webkit-text-stroke: 1px var(--text);
 }
 
-.hero__text > p {
+.hero__text>p {
   max-width: 580px;
   margin-top: 36px;
   color: var(--muted);

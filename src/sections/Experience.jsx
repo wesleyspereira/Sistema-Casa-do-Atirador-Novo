@@ -15,13 +15,13 @@ function Experience() {
         <span className="eyebrow">A experiência</span>
 
         <h2>
-          Mais que uma loja.
-          <span>Uma presença com identidade própria.</span>
+          Muito além dos equipamentos.
+          <span>Uma experiência de confiança.</span>
         </h2>
 
         <p>
-          Fundo camuflado, visual premium e uma vitrine preparada para valorizar
-          produtos, serviços e atendimento especializado.
+          Produtos, atendimento e assessoria para quem valoriza tradição,
+          segurança e conhecimento especializado.
         </p>
       </div>
     </section>

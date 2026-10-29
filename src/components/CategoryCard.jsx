@@ -1,23 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
 
-function CategoryCard({ title, subtitle, image, number }) {
+export default function CategoryCard({ title, subtitle, image, number, onClick }) {
   return (
-    <article className="category-card">
-      <img src={image} alt="" className="category-card__image" />
-
-      <div className="category-card__shade"></div>
-
-      <div className="category-card__top">
-        <span>{number}</span>
-        <ArrowUpRight size={18} />
-      </div>
-
-      <div className="category-card__content">
-        <span>{subtitle}</span>
-        <h3>{title}</h3>
-      </div>
-    </article>
+    <button className="category-card" type="button" onClick={onClick} aria-label={`Ver destaques da categoria ${title}`}>
+      <img src={image} alt="" className="category-card__image" loading="lazy" />
+      <span className="category-card__shade" aria-hidden="true" />
+      <span className="category-card__top"><span>{number}</span><ArrowUpRight size={19} aria-hidden="true" /></span>
+      <span className="category-card__content"><span>{subtitle}</span><strong>{title}</strong><small>Explorar categoria <ArrowUpRight size={13} /></small></span>
+    </button>
   );
 }
-
-export default CategoryCard;

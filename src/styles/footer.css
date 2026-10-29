@@ -58,7 +58,7 @@
   gap: 40px;
 }
 
-.footer__columns > div {
+.footer__columns>div {
   display: flex;
   flex-direction: column;
   gap: 13px;
